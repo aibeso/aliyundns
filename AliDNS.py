@@ -129,6 +129,19 @@ def check_ip(ip):
         return True
 
 if __name__ == '__main__':
+
+    # 保存key方法1 : 直接在同级文件夹下新建一个aliyundns.key
+    # 文件并写入 key = {"AccessKeyId": "替换你的keyid", "AccessKeySecret": "替换你的keysecret"}
+
+    # 保存key方法2  取消下面的注释(删除#)，填写你的key，然后运行程序,  执行命令: python AliDNS.py
+    # file_name = "aliyundns.key"
+    # key = {"AccessKeyId": "  你的keyid", "AccessKeySecret": "你的keysecret"}
+    # with open(file_name, 'w') as f:
+    #     json.dump(key, f)
+    #     f.close()
+    # print("key 保存成功")
+	
+
     start_time = datetime.datetime.now()
     alinds = AliDNS()
     print('local_IP：' + get_local_ip())

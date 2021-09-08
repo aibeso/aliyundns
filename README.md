@@ -1,19 +1,29 @@
 # 调用阿里云域名解析的API接口实现动态DNS
 通过阿里云域名解析实现动态dns并访问家庭内网
-## 前提
-阿里云的二级域名
-阿里云DNS API的访问
-宽带有公网ip，（电信的没有公网ip可以打电话让运营商设置）
-光猫或者路由器（看拨号的设置）可以开放外网端口
-内网中有可以运行程序的条件（列入树莓派）
-## 关于阿里云域名解析
-域名解析免费版TTL值为10分钟，已满足家庭宽带公网ip的变换速度（基本几天才变一次）
-## Python版本
-Python3
-## 使用
-保存key方法1 : 直接在同级文件夹下新建一个aliyundns.key
-文件并写入 key = {"AccessKeyId": "替换你的keyid", "AccessKeySecret": "替换你的keysecret"}
-保存key方法2  打开aliDNS.py，找到if __name__ == '__main__':一行的后面依照说明
-## 启动方法
-命令行执行：python AliDNS.py
-
+## 食用
+安装依赖(安装不上依赖的请自行解决)  
+pip install -r requirements.txt  
+qinglong 拉库命令：ql repo https://github.com/aibeso/scripts.git "Ali" "" "__init__|sendNotify|requirements" "master"  
+不知道青龙拉库自动添加定时任务的模板，知道的可以指导一下，非常感谢。  
+定时参数  
+*/5 * * * *  
+环境设置 参数  
+export DNS_AKIDID = 'LTAI5t6...'  # 阿里云 AccessKey ID  
+export DNS_AKSECRET = 'F3cLQb9...'  # 阿里云 AccessKey Secret  
+export DNS_DOMAINNAME = 'baidu.com'  # 域名  
+export DNS_RR = 'www'            # 主机记录  
+export DNS_TYPE = 'A'            # 解析记录类型格式 ：A：IPv4地址格式  
+环境设置 通知服务
+export BARK=''                   # bark服务,苹果商店自行搜索;  
+export SCKEY=''                  # Server酱的SCKEY;  
+export TG_BOT_TOKEN=''           # tg机器人的TG_BOT_TOKEN;  
+export TG_USER_ID=''             # tg机器人的TG_USER_ID;  
+export TG_API_HOST=''            # tg 代理api  
+export TG_PROXY_IP=''            # tg机器人的TG_PROXY_IP;  
+export TG_PROXY_PORT=''          # tg机器人的TG_PROXY_PORT;  
+export DD_BOT_TOKEN=''           # 钉钉机器人的DD_BOT_ACCESS_TOKEN;  
+export DD_BOT_SECRET=''          # 钉钉机器人的DD_BOT_SECRET;  
+export QQ_SKEY=''                # qq机器人的QQ_SKEY;  
+export QQ_MODE=''                # qq机器人的QQ_MODE;  
+export QYWX_AM=''                # 企业微信；http://note.youdao.com/s/HMiudGkb  
+export PUSH_PLUS_TOKEN=''        # 微信推送Plus+ ；  

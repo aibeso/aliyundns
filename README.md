@@ -3,7 +3,7 @@
 ## 食用
 安装依赖(安装不上依赖的请自行解决)  
 pip install -r requirements.txt  
-qinglong 拉库命令：ql repo https://github.com/aibeso/scripts.git "Ali" "" "__init__|sendNotify|requirements" "master"  
+qinglong 拉库命令：ql repo https://github.com/aibeso/aliyundns.git "Ali" "" "__init__|sendNotify|requirements" "ql"  
 不知道青龙拉库自动添加定时任务的模板，知道的可以指导一下，非常感谢。  
 定时参数  
 */5 * * * *  

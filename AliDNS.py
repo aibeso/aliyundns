@@ -3,8 +3,12 @@
 '''
 [task_local]
 # 阿里云DDNS
-*/2 * * * *
-new Env('DDNS');
+# qinglong 无法识别定时任务，自行添加
+ */2 * * * * AliDNS.py
+ cron "*/2 * * * *"
+ cron: "*/2 * * * *"
+ new Env('DDNS');
+
 Env环境设置 参数
 export DNS_AKIDID = 'LTAI5t6...'  # 阿里云 AccessKey ID
 export DNS_AKSECRET = 'F3cLQb9...'  # 阿里云 AccessKey Secret
@@ -19,7 +23,7 @@ export TG_USER_ID=''             # tg机器人的TG_USER_ID;
 export TG_API_HOST=''            # tg 代理api
 export TG_PROXY_IP=''            # tg机器人的TG_PROXY_IP;
 export TG_PROXY_PORT=''          # tg机器人的TG_PROXY_PORT;
-export DD_BOT_TOKEN=''    # 钉钉机器人的DD_BOT_ACCESS_TOKEN;
+export DD_BOT_TOKEN=''           # 钉钉机器人的DD_BOT_TOKEN;
 export DD_BOT_SECRET=''          # 钉钉机器人的DD_BOT_SECRET;
 export QQ_SKEY=''                # qq机器人的QQ_SKEY;
 export QQ_MODE=''                # qq机器人的QQ_MODE;
@@ -37,7 +41,6 @@ import datetime
 import re
 import requests
 import random
-from sendNotify import Send
 
 class AliDNS :
 
@@ -106,9 +109,13 @@ class AliDNS :
         rec = json.loads(res.decode('utf-8'))
         if(rec.get('RecordId') == self.record_id):
             print(datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S') + "域名：" + self.RR + "." + self.domainname + "\n更换IP:" + str(ip))
-            msg = Send()
-            message = "域名：" + self.RR + "." + self.domainname + "\nIP更换：" +self.ali_ip + " --> " + self.local_ip + '\n\n开源免费By: https://github.com/aibeso/aliyundns/tree/ql';
-            msg.send("DDNS解析变更通知", "域名：" + message)
+            try:
+                from sendNotify import Send
+                msg = Send()
+                message = "域名：" + self.RR + "." + self.domainname + "\nIP更换：" +self.ali_ip + " --> " + self.local_ip + '\n\n开源免费By: https://github.com/aibeso/aliyundns/tree/ql';
+                msg.send("DDNS解析变更通知", "域名：" + message)
+            except:
+                print("发起通知失败！")
         else:
             print("未知错误，请检查当前域名解析地址是否正确！")
 

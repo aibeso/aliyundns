@@ -1,10 +1,13 @@
 # 调用阿里云域名解析的API接口实现动态DNS
 通过阿里云域名解析实现动态dns并访问家庭内网
 ## 食用
-安装依赖(安装不上依赖的请自行解决)  
+安装依赖包(安装不上依赖的请自行解决)  
 pip install -r requirements.txt  
+文件依赖(否则无法通知)
+__init__.py
+sendNotify.py
 qinglong 拉库命令：ql repo https://github.com/aibeso/aliyundns.git "Ali" "" "__init__|sendNotify|requirements" "ql"  
-不知道青龙拉库自动添加定时任务的模板，知道的可以指导一下，非常感谢。  
+青龙拉库无法自动添加定时任务，自行修改
 定时参数  
 */5 * * * *  
 环境设置 参数  

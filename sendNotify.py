@@ -24,11 +24,8 @@ TG_USER_ID = ''             # tg机器人的TG_USER_ID; secrets可填 1434078534
 TG_API_HOST=''              # tg 代理api
 TG_PROXY_IP = ''            # tg机器人的TG_PROXY_IP; secrets可填
 TG_PROXY_PORT = ''          # tg机器人的TG_PROXY_PORT; secrets可填
-# DD_BOT_TOKEN = ''    # 钉钉机器人的DD_BOT_TOKEN; secrets可填
-# DD_BOT_SECRET = ''          # 钉钉机器人的DD_BOT_SECRET; secrets可填
-
-DD_BOT_TOKEN="0358267fb1d89e59d4d08127fb2b1f4fc9783b251f963cbcad6b3fbc496c025c"
-DD_BOT_SECRET="SEC2469a98fafba779a1dd1f8e7626dfbda7008dce1c11013e7ec1582f6ebf4aeb1"
+DD_BOT_TOKEN=""
+DD_BOT_SECRET=""
 QQ_SKEY = ''                # qq机器人的QQ_SKEY; secrets可填
 QQ_MODE = ''                # qq机器人的QQ_MODE; secrets可填
 QYWX_AM = ''                # 企业微信

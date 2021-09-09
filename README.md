@@ -8,12 +8,12 @@ qinglong 拉库命令：ql repo https://github.com/aibeso/aliyundns.git "Ali" ""
 定时参数  
 */5 * * * *  
 环境设置 参数  
-export DNS_AKIDID = 'LTAI5t6...'  # 阿里云 AccessKey ID  
-export DNS_AKSECRET = 'F3cLQb9...'  # 阿里云 AccessKey Secret  
-export DNS_DOMAINNAME = 'baidu.com'  # 域名  
-export DNS_RR = 'www'            # 主机记录  
-export DNS_TYPE = 'A'            # 解析记录类型格式 ：A：IPv4地址格式  
-环境设置 通知服务
+export DNS_AKIDID = 'LTAI5t6...'      # 阿里云 AccessKey ID  
+export DNS_AKSECRET = 'F3cLQb9...'    # 阿里云 AccessKey Secret  
+export DNS_DOMAINNAME = 'baidu.com'   # 域名  
+export DNS_RR = 'www'                 # 主机记录  
+export DNS_TYPE = 'A'                 # 解析记录类型格式 ：A：IPv4地址格式  
+环境设置 通知服务  
 export BARK=''                   # bark服务,苹果商店自行搜索;  
 export SCKEY=''                  # Server酱的SCKEY;  
 export TG_BOT_TOKEN=''           # tg机器人的TG_BOT_TOKEN;  
